@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uno Dare! Web App V2</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Menghubungkan ke file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <!-- Main Title -->
+        <h1 class="mb-6">Uno Dare!</h1>
+
+        <!-- Screen 1: Initial Menu -->
+        <div id="initial-screen" class="screen active">
+            <h2 class="text-2xl">Pilih Aturan Permainan:</h2>
+            <button id="btn-default-dares" class="btn">Aturan Default</button>
+            <button id="btn-new-dares" class="btn">Aturan Baru</button>
+        </div>
+
+        <!-- Screen 2: New Dare Input -->
+        <div id="new-dare-input-screen" class="screen">
+            <h2 class="text-2xl">Masukkan 16 Aturan Baru</h2>
+            <div class="input-group">
+                <p id="new-dare-prompt" class="text-lg text-gray-700"></p>
+                <input type="text" id="input-new-dare" placeholder="Tulis aturan dare di sini...">
+            </div>
+            <button id="btn-save-new-dare" class="btn">Simpan & Lanjut</button>
+            <button id="btn-cancel-new-dare" class="btn btn-secondary">Batal</button>
+        </div>
+
+        <!-- Screen 3: Default Dare List (Review) -->
+        <div id="default-dare-list-screen" class="screen">
+            <h2 class="text-2xl">Daftar Aturan Default:</h2>
+            <ul id="dare-list">
+                <!-- Aturan akan di-render di sini -->
+            </ul>
+            <button id="btn-start-game-from-default" class="btn mt-4">Mulai Permainan</button>
+        </div>
+
+        <!-- Screen 4: Game Play Menu -->
+        <div id="game-play-screen" class="screen">
+            <h2 class="text-2xl">Permainan Berjalan</h2>
+            <button id="btn-get-dare" class="btn">Ambil Aturan Uno Dare</button>
+            <button id="btn-new-match" class="btn">Game Baru</button>
+            <button id="btn-end-game" class="btn btn-secondary">Akhiri Game</button>
+        </div>
+
+        <!-- Screen 5: Choose Dare Number -->
+        <div id="choose-dare-screen" class="screen">
+            <h2 class="text-2xl">Pilih Nomor dari 1-16</h2>
+            <div class="input-group">
+                <input type="number" id="input-dare-number" min="1" max="16" placeholder="Masukkan nomor...">
+            </div>
+            <button id="btn-confirm-dare-number" class="btn">Lihat Dare</button>
+            <button id="btn-back-from-choose-dare" class="btn btn-secondary">Batal</button>
+        </div>
+
+        <!-- Screen 6: Display Dare Result -->
+        <div id="display-dare-screen" class="screen">
+            <h2 class="text-2xl">Dare Nomor <span id="displayed-dare-number"></span>:</h2>
+            <p id="dare-display"></p>
+            <button id="btn-back-to-game-play" class="btn mt-4">Kembali</button>
+        </div>
+    </div>
+
+    <!-- Modal Alert Kustom -->
+    <div id="alert-modal">
+        <div id="alert-modal-content">
+            <p id="alert-modal-message"></p>
+            <button id="alert-modal-ok-btn" class="btn">OK</button>
+        </div>
+    </div>
+    
+    <!-- Menghubungkan ke file JavaScript eksternal (hasil kompilasi dari main.ts) -->
+    <script type="module" src="./dist/main.js"></script>
+</body>
+</html>
